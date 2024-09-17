@@ -16,7 +16,9 @@
       "plugins/*"
     ],
     "legacy-packages": [
-      "legacy-packages/*"
+      "legacy-packages/core",
+      "legacy-packages/react",
+      "legacy-packages/next"
     ],
     "experimental-packages": [
       "experimental-packages/*"
@@ -25,7 +27,8 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "build:experimental": "npm run build --workspace=experimental-packages/experimental-app-router",
-    "build:legacy": "npm run build --workspace=legacy-packages/core --workspace=legacy-packages/react --workspace=legacy-packages/next",
+    "install:legacy": "npm install --prefix legacy-packages/core && npm install --prefix legacy-packages/react && npm install --prefix legacy-packages/next",
+    "build:legacy": "npm run build --prefix legacy-packages/core && npm run build --prefix legacy-packages/react && npm run build --prefix legacy-packages/next",
     "build:core": "npm run build --workspace=@faustjs/core",
     "build:next": "npm run build --workspace=@faustjs/next",
     "build:react": "npm run build --workspace=@faustjs/react",
@@ -38,7 +41,7 @@
     "format": "npm run format --workspaces",
     "build:faust-block-editor-utils": "npm run build --workspace=@faustwp/block-editor-utils",
     "dev": "npm run build && npm run dev:next:getting-started",
-    "dev:next:getting-started": "rimraf examples/next/getting-started/.next && npm run dev ---workspace=examples/next/getting-started",
+    "dev:next:getting-started": "rimraf examples/next/getting-started/.next && npm install --include-dev ---prefix=examples/next/getting-started && npm run dev ---prefix=examples/next/getting-started",
     "docs-legacy": "npm start --prefix internal/legacy.faustjs.org",
     "docs-legacy:build": "npm run build --prefix internal/legacy.faustjs.org",
     "docs-legacy:clear": "npm run clear --prefix internal/legacy.faustjs.org",
