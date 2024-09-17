@@ -21,8 +21,7 @@
   "scripts": {
     "dev": "concurrently \"npm:watch-*\" --prefix-colors \"auto\"",
     "build": "concurrently \"npm:build-*\" --prefix-colors \"auto\"",
-    "prebuild": "npm run clean",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist node_modules",
     "format": "prettier --write .",
     "prepublish": "npm run build",
     "test:coverage:ci": "jest --ci --json --coverage --testLocationInResults --outputFile=report.json",
@@ -30,7 +29,9 @@
     "test:watch": "jest --watch",
     "test": "jest",
     "build-js": "tsc -p .",
-    "watch-js": "concurrently \"npm:build-js -- --watch\""
+    "watch-js": "concurrently \"npm:build-js -- --watch\"",
+    "lint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --fix"
   },
   "repository": {
     "type": "git",
@@ -66,6 +67,7 @@
     "rimraf": "^5.0.1",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "@faustwp/core": "file:../../packages/faustwp-core"
   }
 }

@@ -27,10 +27,14 @@ jobs:
       - name: Build (Monorepo)
         run: npm run build
 
-      - name: Build
+      - name: Install (Experimental App Router)
+        run: npm ci
+        working-directory: experimental-packages/experimental-app-router
+
+      - name: Build (Experimental App Router)
         run: npm run build
         working-directory: experimental-packages/experimental-app-router
 
-      - name: Tests
+      - name: Tests (Experimental App Router)
         run: npm run test
         working-directory: experimental/experimental-app-router
