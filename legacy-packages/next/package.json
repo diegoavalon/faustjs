@@ -95,7 +95,8 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "next": "^12"
   },
   "sideEffects": [
     "./dist/mjs/export/log.js",
