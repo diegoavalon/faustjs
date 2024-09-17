@@ -37,4 +37,4 @@ jobs:
 
       - name: Tests (Experimental App Router)
         run: npm run test
-        working-directory: experimental/experimental-app-router
+        working-directory: experimental-packages/experimental-app-router
