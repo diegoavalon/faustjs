@@ -32,10 +32,7 @@ export const AUTH_CLIENT_CACHE_PROP = '__AUTH_CLIENT_CACHE_PROP';
 
 export interface GetNextServerSidePropsConfig<Props = Record<string, unknown>> {
   client: ReturnType<typeof getClient>;
-  Page?:
-    | FunctionComponent<Props>
-    | ComponentClass<Props>
-    | ((props: Props) => JSX.Element);
+  Page?: any;
   props?: Props;
   notFound?: boolean;
   redirect?: Redirect;
@@ -84,7 +81,7 @@ export async function getProps<
             {/* eslint-disable-next-line react/jsx-no-constructed-context-values */}
             <FaustContext.Provider value={{ client }}>
               {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-              <Page {...(props as any)} />
+              {Page && <Page {...(props as any)} />}
             </FaustContext.Provider>
           </RouterContext.Provider>,
         );
