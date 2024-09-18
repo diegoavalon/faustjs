@@ -46,7 +46,8 @@ jobs:
         run: npm run build
 
       - name: Create "faust" cli bin
-        run: npm ci --include=dev
+        run: npm install
+        working-directory: ${{ matrix.next-dir }}
 
       - name: Create example project .env.local file
         working-directory: ${{ matrix.next-dir }}
