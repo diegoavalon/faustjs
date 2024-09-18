@@ -56,8 +56,8 @@ jobs:
         run: |
           rm -rf e2e-app/node_modules/@faustjs/core
           rm -rf e2e-app/node_modules/@faustjs/next
-          cp -r packages/core e2e-app/node_modules/@faustjs/core
-          cp -r packages/next e2e-app/node_modules/@faustjs/next
+          cp -r legacy-packages/core e2e-app/node_modules/@faustjs/core
+          cp -r legacy-packages/next e2e-app/node_modules/@faustjs/next
       - name: copy env
         working-directory: e2e-app
         run: |
