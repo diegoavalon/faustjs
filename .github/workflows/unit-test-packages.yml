@@ -31,13 +31,3 @@ jobs:
 
       - name: Tests
         run: npm run test
-
-      - name: Code Coverage for FaustWP Core Package
-        uses: ./.github/actions/run-coverage
-        with:
-          working-directory: packages/faustwp-core
-
-      - name: Code Coverage for FaustWP CLI Package
-        uses: ./.github/actions/run-coverage
-        with:
-          working-directory: packages/faustwp-cli
