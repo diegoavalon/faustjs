@@ -4,6 +4,8 @@ on:
   pull_request:
     paths-ignore:
       - '**/*.md'
+    paths:
+      - 'legacy-packages/**'
 
 jobs:
   e2e-test-next-getting-started-example:
