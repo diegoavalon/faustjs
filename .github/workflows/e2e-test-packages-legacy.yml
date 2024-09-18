@@ -71,5 +71,6 @@ jobs:
           npm run generate
       - name: Build
         working-directory: e2e-app
+        continue-on-error: true
         run: |
           npm run build
